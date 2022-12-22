@@ -1,0 +1,22 @@
+{
+  "name": "jandas",
+  "version": "1.0.0",
+  "description": "library for data manipulation and analysis written using functional programming paradigm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bojanzdelar/jandas.git"
+  },
+  "author": "Bojan Zdelar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bojanzdelar/jandas/issues"
+  },
+  "homepage": "https://github.com/bojanzdelar/jandas#readme",
+  "dependencies": {
+    "fast-csv": "^4.3.6"
+  }
+}
