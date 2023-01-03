@@ -1,0 +1,47 @@
+LatD,LatM,LatS,NS,LonD,LonM,LonS,EW,City,State
+41,5,59,N,80,39,0,W,Youngstown,OH
+36,5,59,N,80,15,0,W,Winston-Salem,NC
+48,9,0,N,103,37,12,W,Williston,ND
+36,9,35,N,95,54,36,W,Tulsa,OK
+37,10,11,N,104,30,36,W,Trinidad,CO
+39,11,23,N,78,9,36,W,Winchester,VA
+33,12,35,N,87,34,11,W,Tuscaloosa,AL
+31,13,11,N,82,20,59,W,Waycross,GA
+32,13,12,N,110,58,12,W,Tucson,AZ
+40,13,47,N,74,46,11,W,Trenton,NJ
+37,13,12,N,93,17,24,W,Springfield,MO
+41,15,0,N,77,0,0,W,Williamsport,PA
+42,16,12,N,71,48,0,W,Worcester,MA
+49,16,12,N,123,7,12,W,Vancouver,BC
+32,20,59,N,90,52,47,W,Vicksburg,MS
+42,21,36,N,87,49,48,W,Waukegan,IL
+38,22,11,N,75,35,59,W,Salisbury,MD
+41,25,11,N,122,23,23,W,Weed,CA
+44,25,11,N,72,1,11,W,Saint Johnsbury,VT
+50,25,11,N,104,39,0,W,Regina,SA
+42,30,0,N,92,20,23,W,Waterloo,IA
+32,30,35,N,93,45,0,W,Shreveport,LA
+39,31,12,N,119,48,35,W,Reno,NV
+41,32,59,N,73,3,0,W,Waterbury,CT
+42,33,36,N,114,28,12,W,Twin Falls,ID
+46,35,59,N,120,30,36,W,Yakima,WA
+43,37,48,N,89,46,11,W,Wisconsin Dells,WI
+43,39,0,N,79,22,47,W,Toronto,ON
+37,40,48,N,82,16,47,W,Williamson,WV
+38,40,48,N,87,31,47,W,Vincennes,IN
+35,40,48,N,105,56,59,W,Santa Fe,NM
+37,41,23,N,97,20,23,W,Wichita,KS
+26,43,11,N,80,3,0,W,West Palm Beach,FL
+39,45,0,N,75,33,0,W,Wilmington,DE
+44,45,35,N,85,37,47,W,Traverse City,MI
+40,45,35,N,111,52,47,W,Salt Lake City,UT
+44,47,59,N,106,57,35,W,Sheridan,WY
+42,52,48,N,97,23,23,W,Yankton,SD
+49,52,48,N,97,9,0,W,Winnipeg,MB
+41,52,11,N,103,39,36,W,Scottsbluff,NB
+38,53,23,N,77,1,47,W,Washington,DC
+33,54,0,N,98,29,23,W,Wichita Falls,TX
+33,55,11,N,80,20,59,W,Sumter,SC
+44,56,23,N,123,1,47,W,Salem,OR
+44,57,0,N,93,5,59,W,Saint Paul,MN
+43,58,47,N,75,55,11,W,Watertown,NY

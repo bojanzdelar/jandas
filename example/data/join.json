@@ -1,0 +1,27 @@
+[
+  {
+    "ID": 1,
+    "Ime": "Bojan",
+    "Prezime": "Markovic"
+  },
+  {
+    "ID": 2,
+    "Ime": "Mirko",
+    "Prezime": "Nisovic"
+  },
+  {
+    "ID": 3,
+    "Ime": "Marko",
+    "Prezime": "Dovragovic"
+  },
+  {
+    "ID": 4,
+    "Ime": "Miljan",
+    "Prezime": "Dostanic"
+  },
+  {
+    "ID": 5,
+    "Ime": "Stefan",
+    "Prezime": "Gajic"
+  }
+]
