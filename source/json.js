@@ -1,32 +1,7 @@
 import fs from "fs";
 import Papa from "papaparse";
 
-export const readCSV = async (path) =>
-  new Promise((resolve, reject) => {
-    fs.readFile(path, "utf-8", (err, data) => {
-      if (err) {
-        reject(err);
-      }
-
-      Papa.parse(data, {
-        header: true,
-        transformHeader(h) {
-          return h.trim();
-        },
-        transform(v) {
-          return v.trim();
-        },
-        dynamicTyping: true,
-        skipEmptyLines: true,
-        complete(results) {
-          resolve(results.data);
-        },
-        error(err) {
-          reject(err);
-        },
-      });
-    });
-  });
+const createArray = (a) => (Array.isArray(a) ? a : [a]);
 
 export const readJSON = async (path) =>
   new Promise((resolve, reject) => {
@@ -39,21 +14,6 @@ export const readJSON = async (path) =>
       } catch (err) {
         reject(err);
       }
-    });
-  });
-
-export const writeCSV = async (data, path) =>
-  new Promise((resolve, reject) => {
-    try {
-      data = Papa.unparse(data);
-    } catch (err) {
-      reject(err);
-    }
-    fs.writeFile(path, data, "utf-8", (err) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(`${path} saved successfully`);
     });
   });
 
@@ -72,9 +32,7 @@ export const writeJSON = async (data, path) =>
     });
   });
 
-export const plotSVG = () => {};
-
-export const createArray = (a) => (Array.isArray(a) ? a : [a]);
+export const plotJSON = () => {};
 
 export const filter = (data, criterium) => data.filter(criterium);
 
@@ -84,9 +42,9 @@ export const count = (data) => data.length;
 
 export const countIf = (data, criterium) => count(filter(data, criterium));
 
-export const sum = (data, key) => data.reduce((acc, v) => acc + v[key], 0);
+export const sum = (data) => data.reduce((acc, v) => acc + v, 0);
 
-export const average = (data, key) => sum(data, key) / count(data);
+export const average = (data) => sum(data) / count(data);
 
 export const order = (
   data,
