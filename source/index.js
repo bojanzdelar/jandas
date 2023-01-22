@@ -1,43 +1,43 @@
-import executeWorker from "./internal/executeWorker.js";
-import convertFunctionToString from "./internal/convertFunctionToString.js";
+import _executeWorker from "./internal/_executeWorker.js";
+import _convertFunctionToString from "./internal/_convertFunctionToString.js";
 
 export const readJSON = (path) =>
-  executeWorker("../source/readJSON.js", { path });
+  _executeWorker("../source/readJSON.js", { path });
 
 export const writeJSON = (data, path) =>
-  executeWorker("../source/writeJSON.js", { data, path });
+  _executeWorker("../source/writeJSON.js", { data, path });
 
 export const plotSVG = (data, path, handler) =>
-  executeWorker("../source/plotSVG.js", {
+  _executeWorker("../source/plotSVG.js", {
     data,
     path,
-    handler: convertFunctionToString(handler),
+    handler: _convertFunctionToString(handler),
   });
 
 export const filter = (data, criterium) =>
-  executeWorker("../source/filter.js", {
+  _executeWorker("../source/filter.js", {
     data,
-    criterium: convertFunctionToString(criterium),
+    criterium: _convertFunctionToString(criterium),
   });
 
 export const transform = (data, transformation) =>
-  executeWorker("../source/transform.js", {
+  _executeWorker("../source/transform.js", {
     data,
-    transformation: convertFunctionToString(transformation),
+    transformation: _convertFunctionToString(transformation),
   });
 
-export const count = (data) => executeWorker("../source/count.js", { data });
+export const count = (data) => _executeWorker("../source/count.js", { data });
 
 export const countIf = (data, criterium) =>
-  executeWorker("../source/countIf.js", {
+  _executeWorker("../source/countIf.js", {
     data,
-    criterium: convertFunctionToString(criterium),
+    criterium: _convertFunctionToString(criterium),
   });
 
-export const sum = (data) => executeWorker("../source/sum.js", { data });
+export const sum = (data) => _executeWorker("../source/sum.js", { data });
 
 export const average = (data) =>
-  executeWorker("../source/average.js", { data });
+  _executeWorker("../source/average.js", { data });
 
 export const order = (
   data,
@@ -45,30 +45,30 @@ export const order = (
   ascending = true,
   comparator = (a, b) => a - b
 ) =>
-  executeWorker("../source/order.js", {
+  _executeWorker("../source/order.js", {
     data,
     key,
     ascending,
-    comparator: convertFunctionToString(comparator),
+    comparator: _convertFunctionToString(comparator),
   });
 
 export const unique = (data, key) =>
-  executeWorker("../source/unique.js", { data, key });
+  _executeWorker("../source/unique.js", { data, key });
 
 export const join = (data1, data2, key1, key2 = key1) =>
-  executeWorker("../source/join.js", { data1, data2, key1, key2 });
+  _executeWorker("../source/join.js", { data1, data2, key1, key2 });
 
 export const append = (data1, data2) =>
-  executeWorker("../source/append.js", { data1, data2 });
+  _executeWorker("../source/append.js", { data1, data2 });
 
 export const replace = (data, value, index) =>
-  executeWorker("../source/replace.js", { data, value, index });
+  _executeWorker("../source/replace.js", { data, value, index });
 
 export const upsert = (data1, data2, key1, key2 = key1) =>
-  executeWorker("../source/upsert.js", { data1, data2, key1, key2 });
+  _executeWorker("../source/upsert.js", { data1, data2, key1, key2 });
 
 export const split = (data, criterium) =>
-  executeWorker("../source/split.js", {
+  _executeWorker("../source/split.js", {
     data,
-    criterium: convertFunctionToString(criterium),
+    criterium: _convertFunctionToString(criterium),
   });

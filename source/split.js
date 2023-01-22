@@ -1,6 +1,6 @@
 import esMain from "es-main";
 import { workerData, parentPort } from "worker_threads";
-import convertStringToFunction from "./internal/convertStringToFunction.js";
+import _convertStringToFunction from "./internal/_convertStringToFunction.js";
 import filter from "./filter.js";
 
 const split = (data, criterium) => [
@@ -10,7 +10,7 @@ const split = (data, criterium) => [
 
 if (esMain(import.meta)) {
   parentPort.postMessage(
-    split(workerData.data, convertStringToFunction(workerData.criterium))
+    split(workerData.data, _convertStringToFunction(workerData.criterium))
   );
 }
 

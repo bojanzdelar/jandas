@@ -1,6 +1,6 @@
 import esMain from "es-main";
 import { workerData, parentPort } from "worker_threads";
-import convertStringToFunction from "./internal/convertStringToFunction.js";
+import _convertStringToFunction from "./internal/_convertStringToFunction.js";
 
 const order = (data, key, ascending = true, comparator = (a, b) => a - b) => {
   const sorted = [...data].sort((a, b) => comparator(a[key], b[key]));
@@ -13,7 +13,7 @@ if (esMain(import.meta)) {
       workerData.data,
       workerData.key,
       workerData.ascending,
-      convertStringToFunction(workerData.comparator)
+      _convertStringToFunction(workerData.comparator)
     )
   );
 }

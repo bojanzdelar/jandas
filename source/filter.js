@@ -1,12 +1,12 @@
 import esMain from "es-main";
 import { workerData, parentPort } from "worker_threads";
-import convertStringToFunction from "./internal/convertStringToFunction.js";
+import _convertStringToFunction from "./internal/_convertStringToFunction.js";
 
 const filter = (data, criterium) => data.filter(criterium);
 
 if (esMain(import.meta)) {
   parentPort.postMessage(
-    filter(workerData.data, convertStringToFunction(workerData.criterium))
+    filter(workerData.data, _convertStringToFunction(workerData.criterium))
   );
 }
 

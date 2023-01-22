@@ -1,4 +1,4 @@
-const transpose = (matrix) =>
+const _transpose = (matrix) =>
   matrix[0].map((col, i) => matrix.map((row) => row[i]));
 
-export default transpose;
+export default _transpose;

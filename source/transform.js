@@ -1,6 +1,6 @@
 import esMain from "es-main";
 import { workerData, parentPort } from "worker_threads";
-import convertStringToFunction from "./internal/convertStringToFunction.js";
+import _convertStringToFunction from "./internal/_convertStringToFunction.js";
 
 const transform = (data, transformation) => data.map(transformation);
 
@@ -8,7 +8,7 @@ if (esMain(import.meta)) {
   parentPort.postMessage(
     transform(
       workerData.data,
-      convertStringToFunction(workerData.transformation)
+      _convertStringToFunction(workerData.transformation)
     )
   );
 }

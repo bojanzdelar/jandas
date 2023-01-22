@@ -1,6 +1,6 @@
 import esMain from "es-main";
 import { workerData, parentPort } from "worker_threads";
-import convertStringToFunction from "./internal/convertStringToFunction.js";
+import _convertStringToFunction from "./internal/_convertStringToFunction.js";
 
 const plotSVG = (data, path, handler) => {};
 
@@ -9,7 +9,7 @@ if (esMain(import.meta)) {
     plotSVG(
       workerData.data,
       workerData.path,
-      convertStringToFunction(workerData.handler)
+      _convertStringToFunction(workerData.handler)
     )
   );
 }
