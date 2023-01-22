@@ -1,14 +1,16 @@
-import { writeJSON, join } from "../source/json.js";
+import { writeJSON, join } from "../source/index.js";
 import {
   readCSV,
   transformCSVtoJSON,
   transformJSONtoCSV,
-} from "../source/csv.js";
+} from "../source/csv/index.js";
 
 try {
-  const data1 = transformCSVtoJSON(await readCSV("data/join-1.csv"));
-  const data2 = transformCSVtoJSON(await readCSV("data/join-2.csv"));
-  const data3 = join(data1, data2, "ID");
+  const [data1, data2] = await Promise.all([
+    transformCSVtoJSON(await readCSV("data/join-1.csv")),
+    transformCSVtoJSON(await readCSV("data/join-2.csv")),
+  ]);
+  const data3 = await join(data1, data2, "ID");
   console.log(await writeJSON(data3, "data/join.json"));
 } catch (err) {
   console.log(err);

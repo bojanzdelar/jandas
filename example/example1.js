@@ -1,20 +1,22 @@
-import { writeJSON, unique, order, split, append } from "../source/json.js";
+import { writeJSON, unique, order, split, append } from "../source/index.js";
 import {
   readCSV,
   writeCSV,
   transformCSVtoJSON,
   transformJSONtoCSV,
-} from "../source/csv.js";
+} from "../source/csv/index.js";
 
 try {
   const data1 = await readCSV("data/cities.csv");
-  console.log(await writeJSON(transformCSVtoJSON(data1), "data/cities.json"));
-  const data2 = unique(transformCSVtoJSON(data1), "State");
-  const data3 = order(data2, "LatM");
-  const [data4, data5] = split(data3, (x) => x.LatM > 25);
-  const data6 = transformJSONtoCSV(append(data5, data4));
-  console.log(await writeCSV(data6, "data/test.csv"));
-  console.log(await writeJSON(data5, "data/abc.json"));
+  const data2 = await transformCSVtoJSON(data1);
+  console.log(await writeJSON(data2, "data/cities.json"));
+  const data3 = await unique(data2, "State");
+  const data4 = await order(data3, "LatM");
+  const [data5, data6] = await split(data4, (x) => x.LatM > 25);
+  const data7 = await append(data6, data5);
+  const data8 = await transformJSONtoCSV(data7);
+  console.log(await writeCSV(data8, "data/test.csv"));
+  console.log(await writeJSON(data6, "data/abc.json"));
 } catch (err) {
   console.log(err);
 }
