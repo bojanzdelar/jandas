@@ -11,7 +11,7 @@ try {
     transformCSVtoJSON(await readCSV("data/join-2.csv")),
   ]);
   const data3 = await join(data1, data2, "ID");
-  console.log(await writeJSON(data3, "data/join.json"));
+  await writeJSON(data3, "data/join.json");
 } catch (err) {
   console.log(err);
 }

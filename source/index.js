@@ -14,6 +14,8 @@ export const plotSVG = (data, path, handler) =>
     handler: _convertFunctionToString(handler),
   });
 
+export const clone = (data) => _executeWorker("../source/clone.js", { data });
+
 export const filter = (data, criterium) =>
   _executeWorker("../source/filter.js", {
     data,
