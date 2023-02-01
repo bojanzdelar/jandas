@@ -2,9 +2,10 @@ import esMain from "es-main";
 import { workerData, parentPort } from "worker_threads";
 import fs from "fs";
 import Papa from "papaparse";
+import _logError from "../internal/_logError.js";
 import transformJSONtoCSV from "./transformJSONtoCSV.js";
 
-const readCSV = (path) => {
+const readCSV = _logError((path) => {
   const data = fs.readFileSync(path, "utf-8");
   const parsedData = Papa.parse(data, {
     header: true,
@@ -18,7 +19,7 @@ const readCSV = (path) => {
     skipEmptyLines: true,
   });
   return transformJSONtoCSV(parsedData.data);
-};
+}, {});
 
 if (esMain(import.meta)) {
   parentPort.postMessage(readCSV(workerData.path));

@@ -1,7 +1,8 @@
 import esMain from "es-main";
 import { workerData, parentPort } from "worker_threads";
+import _logError from "../internal/_logError.js";
 
-const transformJSONtoCSV = (data) => {
+const transformJSONtoCSV = _logError((data) => {
   const keys = Object.keys(data[0]);
   const result = keys.reduce((acc, v) => ({ ...acc, [v]: [] }), {});
 
@@ -13,7 +14,7 @@ const transformJSONtoCSV = (data) => {
       ),
     result
   );
-};
+}, {});
 
 if (esMain(import.meta)) {
   parentPort.postMessage(transformJSONtoCSV(workerData.data));

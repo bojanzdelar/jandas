@@ -1,7 +1,8 @@
 import esMain from "es-main";
 import { workerData, parentPort } from "worker_threads";
+import _logError from "./internal/_logError.js";
 
-const clone = (data) => {
+const clone = _logError((data) => {
   if (Array.isArray(data)) {
     return data.map((x) => clone(x));
   }
@@ -11,7 +12,7 @@ const clone = (data) => {
     );
   }
   return data;
-};
+}, {});
 
 if (esMain(import.meta)) {
   parentPort.postMessage(clone(workerData.data));
